@@ -8,15 +8,15 @@ class Button extends React.Component {
 
     //this.context and contextType are used only when accessing one context
 
-    renderSubmit(value) {
-        return value === 'english' ? 'Submit' : 'Voorleggen'
+    renderSubmit(language) {
+        return language === 'english' ? 'Submit' : 'Voorleggen'
     }
 
     renderButton(color) {
         return (
             <button className={`ui button ${color}`}>
                 <LanguageContext.Consumer>
-                    {(value) => this.renderSubmit(value)}
+                    {({ language }) => this.renderSubmit(language)}
                 </LanguageContext.Consumer>
             </button>
         );
